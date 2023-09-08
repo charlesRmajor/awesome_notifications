@@ -76,4 +76,6 @@ enum NotificationCategory {
 
   /// tracking a user's workout.
   Workout,
+
+  MessagingStudio
 }
