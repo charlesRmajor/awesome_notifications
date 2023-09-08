@@ -21,5 +21,6 @@ open class AwesomeContentExtension: UIViewController, UNNotificationContentExten
     }
     
     public func didReceive(_ notification: UNNotification) {
+            print("received AWESOME notification to Swift code");
     }
 }
