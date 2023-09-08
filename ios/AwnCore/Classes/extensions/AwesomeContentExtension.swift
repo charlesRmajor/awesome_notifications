@@ -16,8 +16,10 @@ import Foundation
 open class AwesomeContentExtension: UIViewController, UNNotificationContentExtension {
     
     open override func viewDidLoad() {
+        print("viewDidLoad AWESOME notification to Swift code");
         super.viewDidLoad()
         view.backgroundColor = .red
+
     }
     
     public func didReceive(_ notification: UNNotification) {
