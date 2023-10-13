@@ -242,7 +242,7 @@ public class NotificationBuilder {
         else { return }
         
         guard let localizationModel:NotificationLocalizationModel = localizations[matchedTranslationCode]
-        else { return }
+        else { return }setMessagingLayout
         
         if !StringUtils.shared.isNullOrEmpty(localizationModel.title) {
             notificationModel.content!.title = localizationModel.title
@@ -590,6 +590,10 @@ public class NotificationBuilder {
                 setDefaultLayout(notificationModel: notificationModel, content: content)
                 return
             
+            case .Fourteen40Message:
+                setFourteen40MessageLayout(notificationModel: notificationModel, content: content)
+                return
+            
             default:
                 setDefaultLayout(notificationModel: notificationModel, content: content)
                 return
@@ -689,6 +693,12 @@ public class NotificationBuilder {
         content.categoryIdentifier = "Messaging"
         
         content.threadIdentifier = (isGrouping ? "MessagingGR." : "Messaging.")+notificationModel.content!.channelKey!
+    }
+    
+    private func setFourteen40MessageLayout(notificationModel:NotificationModel, content:UNMutableNotificationContent, isGrouping:Bool) {
+        content.categoryIdentifier = "Fourteen40Message"
+        
+        content.threadIdentifier = (isGrouping ? "Fourteen40MessageGR." : "Fourteen40Message.")+notificationModel.content!.channelKey!
     }
     
     private func setDefaultLayout(notificationModel:NotificationModel, content:UNMutableNotificationContent) {

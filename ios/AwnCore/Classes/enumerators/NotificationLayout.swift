@@ -8,5 +8,6 @@ public enum NotificationLayout : String, CaseIterable {
   case Messaging = "Messaging"
   case MessagingGroup = "MessagingGroup"
   case MediaPlayer = "MediaPlayer"
+  case Fourteen40Message = "Fourteen40Message"
   
 }
